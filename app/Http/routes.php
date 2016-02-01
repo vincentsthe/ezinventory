@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/atk', 'AtkController@index');
+
+Route::get('/atk/add', 'AtkController@add');
+
+Route::post('/atk/add', 'AtkController@add');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
