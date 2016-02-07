@@ -19,7 +19,13 @@ Route::get('/atk', 'AtkController@index');
 
 Route::get('/atk/add', 'AtkController@add');
 
-Route::post('/atk/add', 'AtkController@add');
+Route::post('/atk/add', 'AtkController@postAdd');
+
+Route::get('/pengadaan', 'PengadaanController@index');
+
+Route::get('/pengadaan/add', 'PengadaanController@add');
+
+Route::post('/pengadaan/add', 'PengadaanController@postAdd');
 
 /*
 |--------------------------------------------------------------------------

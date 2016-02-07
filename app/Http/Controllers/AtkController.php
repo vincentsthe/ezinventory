@@ -25,15 +25,16 @@ class AtkController extends Controller
         ]);
     }
 
-    public function add(Request $request)
+    public function add()
     {
-        if ($request->isMethod('post')) {
-            $jenis = $request->input('jenis');
-            $this->atkService->save($jenis);
-
-            return redirect()->action('AtkController@index');
-        }
-
         return view('atk.add');
+    }
+
+    public function postAdd(Request $request)
+    {
+        $jenis = $request->input('jenis');
+        $this->atkService->save($jenis);
+
+        return redirect()->action('AtkController@index');
     }
 }

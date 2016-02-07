@@ -5,6 +5,7 @@
 
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
 
+        <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-2.2.0.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
     </head>
     <body>
@@ -27,9 +28,12 @@
                 <div class="col-md-3">
                     <ul class="nav nav-pills nav-stacked">
                         <li role="presentation"><a href="/atk">Daftar ATK</a></li>
-                        <li role="presentation"><a href="/atk">Daftar Supplier</a></li>
-                        <li role="presentation"><a href="/atk">Daftar Peminjam</a></li>
-                        <li role="presentation"><a href="/atk">Statistik</a></li>
+                        <li role="presentation"><a href="#">Daftar Pemakaian</a></li>
+                        <li role="presentation"><a href="#">Daftar Booking</a></li>
+                        <li role="presentation"><a href="/pengadaan">Daftar Pengadaan</a></li>
+                        <li role="presentation"><a href="#">Daftar Supplier</a></li>
+                        <li role="presentation"><a href="#">Daftar Peminjam</a></li>
+                        <li role="presentation"><a href="#">Statistik</a></li>
                     </ul>
                 </div>
 
@@ -38,5 +42,7 @@
                 </div>
             </div>
         </div>
+
+        @yield('javascript')
     </body>
 </html>
