@@ -27,6 +27,18 @@ Route::get('/pengadaan/add', 'PengadaanController@add');
 
 Route::post('/pengadaan/add', 'PengadaanController@postAdd');
 
+Route::get('/pemakaian', 'PemakaianController@index');
+
+Route::get('/pemakaian/add', 'PemakaianController@add');
+
+Route::post('/pemakaian/add', 'PemakaianController@postAdd');
+
+Route::get('/booking', 'BookingController@index');
+
+Route::get('/booking/add', 'BookingController@add');
+
+Route::post('/booking/add', 'BookingController@postAdd');
+
 Route::get('/user', 'UserController@index');
 
 Route::get('/user/add', 'UserController@add');

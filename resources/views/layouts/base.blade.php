@@ -28,8 +28,8 @@
                 <div class="col-md-3">
                     <ul class="nav nav-pills nav-stacked">
                         <li role="presentation"><a href="/atk">Daftar ATK</a></li>
-                        <li role="presentation"><a href="#">Daftar Pemakaian</a></li>
-                        <li role="presentation"><a href="#">Daftar Booking</a></li>
+                        <li role="presentation"><a href="/pemakaian">Daftar Pemakaian</a></li>
+                        <li role="presentation"><a href="/booking">Daftar Booking</a></li>
                         <li role="presentation"><a href="/pengadaan">Daftar Pengadaan</a></li>
                         <li role="presentation"><a href="/supplier">Daftar Supplier</a></li>
                         <li role="presentation"><a href="/user">Daftar Peminjam</a></li>
