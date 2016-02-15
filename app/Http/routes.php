@@ -39,6 +39,12 @@ Route::get('/booking/add', 'BookingController@add');
 
 Route::post('/booking/add', 'BookingController@postAdd');
 
+Route::get('/booking/view/{id}', 'BookingController@view');
+
+Route::get('/booking/confirm/{id}', 'BookingController@confirm');
+
+Route::get('/booking/delete/{id}', 'BookingController@delete');
+
 Route::get('/user', 'UserController@index');
 
 Route::get('/user/add', 'UserController@add');
