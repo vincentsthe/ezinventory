@@ -20,7 +20,7 @@
                 <tr>
                     <td>{{ $booking->id }}</td>
                     <td>{{ $booking->user->nama }}</td>
-                    <td>{{ $booking->tanggal_pemakaian }}</td>
+                    <td>{{ $booking->tanggal_booking }}</td>
                     <td>{{ $booking->itemString() }}</td>
                     <td><a href="/booking/view/{{ $booking->id }}"><span class="glyphicon glyphicon-search"></span></a></td>
                 </tr>

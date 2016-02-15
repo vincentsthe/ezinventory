@@ -6,7 +6,7 @@
     </h1>
     <hr>
 
-
+     <?php print_r ($countPemakaian); ?>
     <div id="chart">
     </div>
 @endsection
@@ -27,7 +27,7 @@
         <?php endfor; ?>
 
         var options = ({
-            title: 'Total Most Recent Posts',
+            title: 'Total Pemakaian ATK per Periode',
             height: 450,
             width: 900,
         });

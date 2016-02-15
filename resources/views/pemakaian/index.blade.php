@@ -20,7 +20,7 @@
                 <tr>
                     <td>{{ $pemakaian->id }}</td>
                     <td>{{ $pemakaian->user->nama }}</td>
-                    <td>{{ $pemakaian->tanggal }}</td>
+                    <td>{{ $pemakaian->tanggal_pemakaian }}</td>
                     <td>{{ $pemakaian->itemString() }}</td>
                 </tr>
             @endforeach
