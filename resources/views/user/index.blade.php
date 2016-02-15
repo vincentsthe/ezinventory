@@ -1,10 +1,10 @@
 @extends('layouts.base')
 
 @section('content')
-    <h1>Daftar peminjam</h1>
+    <h1>Daftar user</h1>
     <hr>
 
-    <a class="btn btn-success" href="{{ url('user/add') }}">Tambah peminjam baru</a>
+    <a class="btn btn-success" href="{{ url('user/add') }}">Tambah user baru</a>
 
     <table class="table table-striped">
         <thead>

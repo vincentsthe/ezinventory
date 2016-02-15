@@ -34,7 +34,7 @@
                         <li role="presentation"><a href="/booking">Daftar Booking</a></li>
                         <li role="presentation"><a href="/pengadaan">Daftar Pengadaan</a></li>
                         <li role="presentation"><a href="/supplier">Daftar Supplier</a></li>
-                        <li role="presentation"><a href="/user">Daftar Peminjam</a></li>
+                        <li role="presentation"><a href="/user">Daftar User</a></li>
                         <li role="presentation"><a href="#">Statistik</a></li>
                     </ul>
                 </div>

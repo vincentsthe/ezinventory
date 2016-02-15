@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>
-        Tambah peminjam baru
+        Tambah user baru
     </h1>
     <hr>
 
