@@ -42,6 +42,7 @@ class BookingController extends Controller
         $userId = $request->input('user_id');
         $atkIds = $request->input('atk_id');
         $jumlahItems = $request->input('jumlah_item');
+        $tanggal = $request->input('tanggal');
         $description = $request->input("description");
 
         $records = [];
@@ -53,7 +54,35 @@ class BookingController extends Controller
             ];
         }
 
-        $this->bookingService->create($userId, $description, $records);
+        $this->bookingService->create($userId, $tanggal, $description, $records);
+
+        return redirect()->action('BookingController@index');
+    }
+
+    public function view(Request $request, $id)
+    {
+        $booking = Pemakaian::where('booking', '=', 1)
+                                ->where('id', '=', $id)
+                                ->with(['items', 'items.atk', 'user'])
+                                ->first();
+
+        return view('booking.view', [
+            'booking' => $booking
+        ]);
+    }
+
+    public function confirm(Request $request, $id)
+    {
+        $this->bookingService->confirmBooking($id);
+
+        return redirect()->action('PemakaianController@index');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $booking = Pemakaian::where('booking', '=', 1)
+                                ->where('id', '=', $id)
+                                ->delete();
 
         return redirect()->action('BookingController@index');
     }

@@ -8,12 +8,11 @@ use Carbon\Carbon;
 
 class PengadaanService
 {
-    public function create($supplierId, $tanggalPemakaian, array $pengadaanRecords)
+    public function create($supplierId, array $pengadaanRecords)
     {
         $pengadaan = new Pengadaan();
         $pengadaan->supplier_id = $supplierId;
         $pengadaan->tanggal = new Carbon();
-        $pengadaan->tanggal_pemakaian = Carbon::createFromFormat("Y-m-d", $tanggalPemakaian);
         $pengadaan->save();
 
         foreach ($pengadaanRecords as $pengadaanRecord)
