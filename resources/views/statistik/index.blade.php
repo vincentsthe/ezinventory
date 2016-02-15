@@ -1,23 +1,80 @@
 @extends('layouts.base')
 
 @section('content')
-    <h1>Statistik</h1>
+    <h1>
+        Statistik
+    </h1>
     <hr>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Jenis</th>
-                <th>Jumlah</th>
-            </tr>
-        </thead>
-        <tbody>
-                <tr>
-                    <td>testing</td>
-                    <td>testing</td>
-                    <td>testing</td>
-                </tr>
-        </tbody>
-    </table>
+    <form name="statsForm" class="form-horizontal" method="POST">
+        <div class="form-group">
+            <label class="col-md-2 control-label">Start Date</label>
+            <div class="col-md-5">
+                <input id="startdate" type="text" class="form-control" name="startdate" required>
+            </div>
+            <br><br>
+            <label class="col-md-2 control-label">End Date</label>
+            <div class="col-md-5">
+                <input id="enddate" type="text" class="form-control" name="enddate" required>
+            </div>
+        </div>
+        <br><br>
+        <div class="col-md-4">
+            <button id="add-item-button" type="submit" onclick="submitUser(); return false" class="btn btn-primary btn-lg">ATK per User</button>
+        </div>
+        <div class="col-md-4">
+            <button id="add-item-button" type="submit" onclick="submitAtk(); return false" class="btn btn-primary btn-lg">ATK per Periode</button>
+        </div>
+        <div class="col-md-4">
+            <button id="add-item-button" type="submit" onclick="submitMinAtk(); return false" class="btn btn-primary btn-lg">Stok Minimum ATK</button>
+        </div>
+
+    
+
+    </form>
+
+    <div id="chart">
+    </div>
+@endsection
+
+@section('javascript')
+    
+    <script type="text/javascript" src="{{ URL::asset('assets/js/statistik.js') }}"></script>
+    <script type="text/javascript">
+    function submitAtk()
+    {
+       var form = document.forms['statsForm'];
+       form.action = '/statistik/atk';
+       var el = document.createElement("input");
+       el.type = "hidden";
+       el.name = "myHiddenField";
+       el.value = "myValue";
+       form.appendChild(el);
+       form.submit();
+    }
+
+    function submitUser()
+    {
+       var form = document.forms['statsForm'];
+       form.action = '/statistik/user';
+       var el = document.createElement("input");
+       el.type = "hidden";
+       el.name = "myHiddenField";
+       el.value = "myValue";
+       form.appendChild(el);
+       form.submit();
+    }
+
+    function submitMinAtk()
+    {
+       var form = document.forms['statsForm'];
+       form.action = '/statistik/min-atk';
+       var el = document.createElement("input");
+       el.type = "hidden";
+       el.name = "myHiddenField";
+       el.value = "myValue";
+       form.appendChild(el);
+       form.submit();
+    }
+    </script>
 @endsection

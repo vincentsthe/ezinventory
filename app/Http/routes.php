@@ -59,6 +59,13 @@ Route::post('/supplier/add', 'SupplierController@postAdd');
 
 Route::get('/statistik', 'StatistikController@index');
 
+Route::post('/statistik/atk', 'StatistikController@showAtk');
+
+Route::post('/statistik/user', 'StatistikController@showUser');
+
+Route::post('/statistik/min-atk', 'StatistikController@showMinAtk');
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
