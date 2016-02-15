@@ -52,6 +52,16 @@ class StatistikController extends Controller
     {
         $startdate = $request->input('startdate');
         $enddate = $request->input('enddate');
-    }
+        $allAtk = Atk::all();
 
+        foreach ($allAtk as $atk) {
+            $atk['stokCount'] = $this->statistikService->getStokMinimumAtk($atk,$startdate,$enddate);
+        }
+
+        return view('statistik.stokminimum', [
+            'stokList' => $allAtk,
+            'startDate' => $startdate,
+            'endDate' => $enddate
+        ]);
+    }
 }
