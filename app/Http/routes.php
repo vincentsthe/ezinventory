@@ -27,6 +27,18 @@ Route::get('/pengadaan/add', 'PengadaanController@add');
 
 Route::post('/pengadaan/add', 'PengadaanController@postAdd');
 
+Route::get('/user', 'UserController@index');
+
+Route::get('/user/add', 'UserController@add');
+
+Route::post('/user/add', 'UserController@postAdd');
+
+Route::get('/supplier', 'SupplierController@index');
+
+Route::get('/supplier/add', 'SupplierController@add');
+
+Route::post('/supplier/add', 'SupplierController@postAdd');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
