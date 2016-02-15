@@ -51,6 +51,8 @@ Route::get('/supplier/add', 'SupplierController@add');
 
 Route::post('/supplier/add', 'SupplierController@postAdd');
 
+Route::get('/statistik', 'StatistikController@index');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
