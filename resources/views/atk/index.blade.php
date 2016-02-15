@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{ $atk->id }}</td>
                     <td>{{ $atk->jenis }}</td>
-                    <td>0</td>
+                    <td>{{ $atk->itemCount }}</td>
                 </tr>
             @endforeach
         </tbody>

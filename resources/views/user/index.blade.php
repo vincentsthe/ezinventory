@@ -18,7 +18,6 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->nama }}</td>
-                    <td>0</td>
                 </tr>
             @endforeach
         </tbody>

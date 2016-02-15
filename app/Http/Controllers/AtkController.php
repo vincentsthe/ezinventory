@@ -20,6 +20,10 @@ class AtkController extends Controller
     {
         $allAtk = Atk::all();
 
+        foreach ($allAtk as $atk) {
+            $atk['itemCount'] = $this->atkService->getItemCount($atk);
+        }
+
         return view('atk.index', [
             'atkList' => $allAtk
         ]);

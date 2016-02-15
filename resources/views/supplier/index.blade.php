@@ -18,7 +18,6 @@
                 <tr>
                     <td>{{ $supplier->id }}</td>
                     <td>{{ $supplier->nama }}</td>
-                    <td>0</td>
                 </tr>
             @endforeach
         </tbody>
