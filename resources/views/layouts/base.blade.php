@@ -4,9 +4,11 @@
         <title>EzInventory</title>
 
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/bootstrap-datepicker.min.css') }}">
 
         <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-2.2.0.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse">

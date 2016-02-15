@@ -41,6 +41,7 @@ class PengadaanController extends Controller
         $supplierId = $request->input('supplier_id');
         $atkIds = $request->input('atk_id');
         $jumlahItems = $request->input('jumlah_item');
+        $tanggal = $request->input('tanggal');
 
         $records = [];
         $recordLength = sizeof($atkIds);
@@ -51,7 +52,7 @@ class PengadaanController extends Controller
             ];
         }
 
-        $this->pengadaanService->create($supplierId, $records);
+        $this->pengadaanService->create($supplierId, $tanggal, $records);
 
         return redirect()->action('PengadaanController@index');
     }

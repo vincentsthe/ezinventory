@@ -11,7 +11,7 @@
             <tr>
                 <th>Id</th>
                 <th>User</th>
-                <th>Tanggal</th>
+                <th>Tanggal Pemakaian</th>
                 <th>Barang</th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@
                 <tr>
                     <td>{{ $booking->id }}</td>
                     <td>{{ $booking->user->nama }}</td>
-                    <td>{{ $booking->tanggal }}</td>
+                    <td>{{ $booking->tanggal_pemakaian }}</td>
                     <td>{{ $booking->itemString() }}</td>
                 </tr>
             @endforeach

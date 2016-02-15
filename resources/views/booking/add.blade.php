@@ -18,6 +18,13 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tanggal Pemakaian</label>
+            <div class="col-md-5">
+                <input id="tanggal" type="text" class="form-control" name="tanggal" required>
+            </div>
+        </div>
+
         <h2>Item</h2>
         <table class="table" id="pemakaian-table">
             <thead>
@@ -51,5 +58,5 @@
         @endforeach
         console.log(window.atkList);
     </script>
-    <script type="text/javascript" src="{{ URL::asset('assets/js/pemakaian-add.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/booking-add.js') }}"></script>
 @endsection
