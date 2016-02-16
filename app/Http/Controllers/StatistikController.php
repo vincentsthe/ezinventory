@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Statistik;
 use App\Models\Atk;
+use App\Models\User;
 use Carbon\Carbon;
 use App\Services\StatistikService;
 use Illuminate\Http\Request;
@@ -41,13 +42,6 @@ class StatistikController extends Controller
         ]);
     }
 
-    public function showUser(Request $request)
-    {
-        $startdate = $request->input('startdate');
-        $enddate = $request->input('enddate');
-        
-    }
-
     public function showMinAtk(Request $request)
     {
         $startdate = $request->input('startdate');
@@ -64,4 +58,30 @@ class StatistikController extends Controller
             'endDate' => $enddate
         ]);
     }
+
+    public function showUser(Request $request)
+    {
+        $startdate = $request->input('startdate');
+        $enddate = $request->input('enddate');
+        $allAtk = Atk::all();
+        $allUser = User::all();
+        $allUserAtk = [];
+
+        foreach($allUser as $user){
+            $atkList = [];
+            foreach ($allAtk as $atk) {
+                $atk['stokCount'] = $this->statistikService->getAtkPerUser($atk,$startdate,$enddate, $user->id);
+                $atkList[] = $atk;
+            }
+            $allUserAtk[] = [$user, $atkList];
+        }
+
+        return view('statistik.user', [
+            'allUserAtk' => $allUserAtk,
+            'startDate' => $startdate,
+            'endDate' => $enddate
+        ]);   
+    }
+
+
 }
