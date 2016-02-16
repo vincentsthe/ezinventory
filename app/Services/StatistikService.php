@@ -20,12 +20,22 @@ class StatistikService
         foreach ($allPemakaian as $pemakaian) {
             $itemCount += $pemakaian->jumlah;
         }
-        
+     
         return $itemCount;
 	}
 
     public function getStokMinimumAtk(Atk $atk, $startDate, $endDate){
-        return $this->getPemakaianAtk($atk->id, $startDate, $endDate);
+        $stokCount = 0;
+        $allPemakaian = ItemPemakaian::join('pemakaian', 'pemakaian.id', '=', 'item_pemakaian.pemakaian_id')
+            ->where('item_pemakaian.atk_id', '=', $atk->id)
+            ->where('pemakaian.tanggal_pemakaian', '>=', $startDate)
+            ->where('pemakaian.tanggal_pemakaian', '<=', $endDate)
+            ->get();
+        foreach ($allPemakaian as $pemakaian) {
+            $stokCount += $pemakaian->jumlah;
+        }
+
+        return $stokCount;
     }
 
     public function getAtkPerUser(Atk $atk, $startDate, $endDate, $userId){

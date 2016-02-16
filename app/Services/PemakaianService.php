@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Atk;
 use App\Models\ItemPemakaian;
 use App\Models\Pemakaian;
 use Carbon\Carbon;
@@ -26,5 +27,20 @@ class PemakaianService
 
             $pemakaianItem->save();
         }
+    }
+
+    public function haveSufficientItem(array $pemakaianRecords)
+    {
+        $atkService = new AtkService();
+
+        foreach ($pemakaianRecords as $pemakaianRecord) {
+            $atk = Atk::find($pemakaianRecord['atk_id']);
+            $itemAvailable = $atkService->getItemCount($atk);
+            if ($itemAvailable < $pemakaianRecord['jumlah']) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

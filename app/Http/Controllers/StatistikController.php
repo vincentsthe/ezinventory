@@ -28,16 +28,18 @@ class StatistikController extends Controller
     	$startdate = $request->input('startdate');
     	$enddate = $request->input('enddate');
     	$atkList = Atk::all();
-    	$countAtk = $atkList->count();
+    	$countAtk = sizeof($atkList);
         $countPemakaian = array();
 
-    	for($i = 1;$i <= $countAtk;$i++) {
-    		$countPemakaian = $this->statistikService->getPemakaianAtk($i, $startdate, $enddate);
+    	for($i = 0;$i < $countAtk;$i++) {
+    		$countPemakaian[] = $this->statistikService->getPemakaianAtk($atkList[$i]->id, $startdate, $enddate);
     	}
     	
         return view('statistik.atk', [
             'countPemakaian' => $countPemakaian,
             'atkList' => $atkList,
+            'startDate' => $startdate,
+            'endDate' => $enddate,
             'countAtk' => $countAtk
         ]);
     }
@@ -51,7 +53,7 @@ class StatistikController extends Controller
         foreach ($allAtk as $atk) {
             $atk['stokCount'] = $this->statistikService->getStokMinimumAtk($atk,$startdate,$enddate);
         }
-
+        
         return view('statistik.stokminimum', [
             'stokList' => $allAtk,
             'startDate' => $startdate,

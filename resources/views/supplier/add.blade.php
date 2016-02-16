@@ -10,7 +10,7 @@
         <div class="form-group">
             <label class="col-md-2 control-label">Nama</label>
             <div class="col-md-5">
-                <input type="text" class="form-control" name="nama">
+                <input type="text" class="form-control" name="nama" required>
             </div>
         </div>
         <div class="col-md-10 col-md-offset-2">

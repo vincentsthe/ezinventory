@@ -10,7 +10,7 @@
         <div class="form-group">
             <label class="col-md-2 control-label">User</label>
             <div class="col-md-5">
-                <select class="form-control" name="user_id">
+                <select class="form-control" name="user_id" required>
                     @foreach($userList as $user)
                         <option value="{{ $user->id }}">{{ $user->nama }}</option>
                     @endforeach
