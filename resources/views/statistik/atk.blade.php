@@ -5,8 +5,29 @@
         Statistik
     </h1>
     <hr>
+    <div>
+    <form class="form-horizontal" method="POST">
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tanggal Mulai</label>
+            <div class="col-md-5">
+                <input id="startdate" type="text" class="form-control" name="startdate" value="{{ $startDate }}" required>
+            </div>
+        </div>
 
-     <?php print_r ($countPemakaian); ?>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tanggal Selesai</label>
+            <div class="col-md-5">
+                <input id="enddate" type="text" class="form-control" name="enddate" value="{{ $endDate }}" required>
+            </div>
+        </div>
+
+        <div class="col-md-10 col-md-offset-2">
+            <button class="btn btn-primary" style="float:right" type="submit">Buka</button>
+        </div>
+    </form>
+    </div>
+
+
     <div id="chart">
     </div>
 @endsection
