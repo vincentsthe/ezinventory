@@ -35,6 +35,7 @@ class BookingService
                             ->where('id', '=', $id)
                             ->first();
 
+        $booking->tanggal_pemakaian = new Carbon();
         $booking->booking = 0;
         $booking->save();
     }
