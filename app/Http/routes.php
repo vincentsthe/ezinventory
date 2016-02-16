@@ -15,56 +15,57 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/atk', 'AtkController@index');
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/atk', 'AtkController@index');
 
-Route::get('/atk/add', 'AtkController@add');
+    Route::get('/atk/add', 'AtkController@add');
 
-Route::post('/atk/add', 'AtkController@postAdd');
+    Route::post('/atk/add', 'AtkController@postAdd');
 
-Route::get('/pengadaan', 'PengadaanController@index');
+    Route::get('/pengadaan', 'PengadaanController@index');
 
-Route::get('/pengadaan/add', 'PengadaanController@add');
+    Route::get('/pengadaan/add', 'PengadaanController@add');
 
-Route::post('/pengadaan/add', 'PengadaanController@postAdd');
+    Route::post('/pengadaan/add', 'PengadaanController@postAdd');
 
-Route::get('/pemakaian', 'PemakaianController@index');
+    Route::get('/pemakaian', 'PemakaianController@index');
 
-Route::get('/pemakaian/add', 'PemakaianController@add');
+    Route::get('/pemakaian/add', 'PemakaianController@add');
 
-Route::post('/pemakaian/add', 'PemakaianController@postAdd');
+    Route::post('/pemakaian/add', 'PemakaianController@postAdd');
 
-Route::get('/booking', 'BookingController@index');
+    Route::get('/booking', 'BookingController@index');
 
-Route::get('/booking/add', 'BookingController@add');
+    Route::get('/booking/add', 'BookingController@add');
 
-Route::post('/booking/add', 'BookingController@postAdd');
+    Route::post('/booking/add', 'BookingController@postAdd');
 
-Route::get('/booking/view/{id}', 'BookingController@view');
+    Route::get('/booking/view/{id}', 'BookingController@view');
 
-Route::get('/booking/confirm/{id}', 'BookingController@confirm');
+    Route::get('/booking/confirm/{id}', 'BookingController@confirm');
 
-Route::get('/booking/delete/{id}', 'BookingController@delete');
+    Route::get('/booking/delete/{id}', 'BookingController@delete');
 
-Route::get('/user', 'UserController@index');
+    Route::get('/user', 'UserController@index');
 
-Route::get('/user/add', 'UserController@add');
+    Route::get('/user/add', 'UserController@add');
 
-Route::post('/user/add', 'UserController@postAdd');
+    Route::post('/user/add', 'UserController@postAdd');
 
-Route::get('/supplier', 'SupplierController@index');
+    Route::get('/supplier', 'SupplierController@index');
 
-Route::get('/supplier/add', 'SupplierController@add');
+    Route::get('/supplier/add', 'SupplierController@add');
 
-Route::post('/supplier/add', 'SupplierController@postAdd');
+    Route::post('/supplier/add', 'SupplierController@postAdd');
 
-Route::get('/statistik', 'StatistikController@index');
+    Route::get('/statistik', 'StatistikController@index');
 
-Route::post('/statistik/atk', 'StatistikController@showAtk');
+    Route::post('/statistik/atk', 'StatistikController@showAtk');
 
-Route::post('/statistik/user', 'StatistikController@showUser');
+    Route::post('/statistik/user', 'StatistikController@showUser');
 
-Route::post('/statistik/min-atk', 'StatistikController@showMinAtk');
-
+    Route::post('/statistik/min-atk', 'StatistikController@showMinAtk');
+});
 
 /*
 |--------------------------------------------------------------------------

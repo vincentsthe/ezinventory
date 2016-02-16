@@ -53,7 +53,11 @@ class PemakaianController extends Controller
             ];
         }
 
-        $this->pemakaianService->create($userId, $description, $records);
+        if ($this->pemakaianService->haveSufficientItem($records)) {
+            $this->pemakaianService->create($userId, $description, $records);
+        } else {
+            $request->session()->put('error', 'Item tidak cukup');
+        }
 
         return redirect()->action('PemakaianController@index');
     }
