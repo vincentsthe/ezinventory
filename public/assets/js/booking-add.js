@@ -10,7 +10,7 @@
     "<td><select class='form-control' name='atk_id[]'>" +
     atkOptionString +
     "</select></td>" +
-    "<td><input type='text' name='jumlah_item[]' class='form-control'></td>" +
+    "<td><input type='text' name='jumlah_item[]' class='form-control' required></td>" +
     "<td><a class='remove-button'><span class='glyphicon glyphicon-remove'></span></a></td>" +
     "</tr>";
 

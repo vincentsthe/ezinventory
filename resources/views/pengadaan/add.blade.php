@@ -10,7 +10,7 @@
         <div class="form-group">
             <label class="col-md-2 control-label">Supplier</label>
             <div class="col-md-5">
-                <select class="form-control" name="supplier_id">
+                <select class="form-control" name="supplier_id" required>
                     @foreach($supplierList as $supplier)
                         <option value="{{ $supplier->id }}">{{ $supplier->nama }}</option>
                     @endforeach
