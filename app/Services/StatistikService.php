@@ -20,7 +20,7 @@ class StatistikService
         foreach ($allPemakaian as $pemakaian) {
             $itemCount += $pemakaian->jumlah;
         }
-        
+     
         return $itemCount;
 	}	
 
