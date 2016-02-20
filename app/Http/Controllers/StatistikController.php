@@ -72,8 +72,9 @@ class StatistikController extends Controller
         foreach($allUser as $user){
             $atkList = [];
             foreach ($allAtk as $atk) {
-                $atk['stokCount'] = $this->statistikService->getAtkPerUser($atk,$startdate,$enddate, $user->id);
-                $atkList[] = $atk;
+                $atkTemp = clone $atk;
+                $atkTemp['stokCount'] = $this->statistikService->getAtkPerUser($atk,$startdate,$enddate, $user->id);
+                $atkList[] = $atkTemp;
             }
             $allUserAtk[] = [$user, $atkList];
         }
