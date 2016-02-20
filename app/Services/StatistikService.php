@@ -23,6 +23,21 @@ class StatistikService
 		return $stokCount;
 	}
 
+	public function getPemakaianAtk($atkId, $startDate, $endDate){
+		$pemakaianCount = 0;
+		$allPemakaian = ItemPemakaian::join('pemakaian', 'pemakaian.id', '=', 'item_pemakaian.pemakaian_id')
+		    ->where('item_pemakaian.atk_id', '=', $atkId)
+		    ->where('pemakaian.booking', '=', '0')
+		    ->where('pemakaian.tanggal_pemakaian', '>=', $startDate)
+		    ->where('pemakaian.tanggal_pemakaian', '<=', $endDate)
+		    ->get();
+		foreach ($allPemakaian as $pemakaian) {
+		    $pemakaianCount += $pemakaian->jumlah;
+		}
+		
+		return $pemakaianCount;
+	}
+
 	public function getAtkPerUser(Atk $atk, $startDate, $endDate, $userId){
 		$itemCount = 0;
 		$allPemakaian = ItemPemakaian::join('pemakaian', 'pemakaian.id', '=', 'item_pemakaian.pemakaian_id')

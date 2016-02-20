@@ -45,5 +45,5 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="{{ URL::asset('assets/js/statistik-index.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/statistik.js') }}"></script>
 @endsection

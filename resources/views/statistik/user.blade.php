@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-    <h3>Stok Per User</h3>
+    <h3>Pemakaian Per User</h3>
     <hr>
 
     <form class="form-horizontal" method="POST">
@@ -18,11 +18,16 @@
                 <input id="enddate" type="text" class="form-control" name="enddate" value="{{ $endDate }}" required>
             </div>
         </div>
+
+        <div class="col-md-10 col-md-offset-2">
+            <button class="btn btn-primary" style="float:right" type="submit">Buka</button>
+        </div>
         
     </form>
-
+    <br><br><br>
     @foreach($allUserAtk as $user)
-    {{$user[0]->nama}}
+    <h4>{{$user[0]->nama}}</h4>
+    <hr>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -46,5 +51,5 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="{{ URL::asset('assets/js/statistik-index.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/statistik.js') }}"></script>
 @endsection

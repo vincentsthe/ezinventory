@@ -27,7 +27,7 @@
     </form>
     </div>
 
-
+    <br><br>
     <div id="chart">
     </div>
 @endsection
@@ -51,10 +51,11 @@
             title: 'Total Pemakaian ATK per Periode',
             height: 450,
             width: 900,
+            bar: {groupWidth: "50%"},
         });
 
 
-        var chart = new google.visualization.AreaChart(document.getElementById('chart'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
         chart.draw(data, options);
     }
         </script>

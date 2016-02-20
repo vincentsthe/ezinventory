@@ -8,16 +8,19 @@
 
     <form name="statsForm" class="form-horizontal" method="POST">
         <div class="form-group">
-            <label class="col-md-2 control-label">Start Date</label>
+            <label class="col-md-2 control-label">Tanggal Mulai</label>
             <div class="col-md-5">
                 <input id="startdate" type="text" class="form-control" name="startdate" required>
             </div>
-            <br><br>
-            <label class="col-md-2 control-label">End Date</label>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tanggal Selesai</label>
             <div class="col-md-5">
                 <input id="enddate" type="text" class="form-control" name="enddate" required>
             </div>
         </div>
+
         <br><br>
         <div class="col-md-4">
             <button id="add-item-button" type="submit" onclick="submitUser(); return false" class="btn btn-primary btn-lg">ATK per User</button>
