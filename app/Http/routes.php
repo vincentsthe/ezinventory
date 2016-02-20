@@ -34,6 +34,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('/pemakaian/add', 'PemakaianController@postAdd');
 
+    Route::get('/pemakaian/view/{id}', 'PemakaianController@view');
+
     Route::get('/booking', 'BookingController@index');
 
     Route::get('/booking/add', 'BookingController@add');

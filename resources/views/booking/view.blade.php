@@ -43,7 +43,7 @@
     <div class="row">
         <div class="col-md-12">
             <a class="btn btn-warning" href="/booking/confirm/{{ $booking->id }}">Konfirm Pengambilan</a>
-            <a class="btn btn-danger" href="/booking/delete/{{ $booking->id }}">Hapus Booking</a>
+            <a class="btn btn-danger" href="/booking/delete/{{ $booking->id }}" onclick="return confirm('ingin menghapus booking ini?');">Hapus Booking</a>
         </div>
     </div>
 @endsection

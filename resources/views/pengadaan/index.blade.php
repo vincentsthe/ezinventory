@@ -4,7 +4,9 @@
     <h1>Daftar Pengadaan</h1>
     <hr>
 
-    <a class="btn btn-success" href="{{ url('pengadaan/add') }}">Tambah Pengadaan baru</a>
+    <div class="col-md-12 text-right">
+        <a class="btn btn-success" href="{{ url('pengadaan/add') }}">Tambah Pengadaan baru</a>
+    </div>
 
     <table class="table table-striped">
         <thead>

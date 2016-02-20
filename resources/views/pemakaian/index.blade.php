@@ -4,7 +4,9 @@
     <h1>Daftar Pemakaian</h1>
     <hr>
 
-    <a class="btn btn-success" href="{{ url('pemakaian/add') }}">Tambah Pemakaian baru</a>
+    <div class="col-md-12 text-right">
+        <a class="btn btn-success" href="{{ url('pemakaian/add') }}">Tambah Pemakaian baru</a>
+    </div>
 
     <table class="table table-striped">
         <thead>
@@ -22,6 +24,7 @@
                     <td>{{ $pemakaian->user->nama }}</td>
                     <td>{{ $pemakaian->tanggal_pemakaian }}</td>
                     <td>{{ $pemakaian->itemString() }}</td>
+                    <td><a href="/pemakaian/view/{{ $pemakaian->id }}"><span class="glyphicon glyphicon-search"></span></a></td>
                 </tr>
             @endforeach
         </tbody>

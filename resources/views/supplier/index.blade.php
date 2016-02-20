@@ -4,7 +4,9 @@
     <h1>Daftar supplier</h1>
     <hr>
 
-    <a class="btn btn-success" href="{{ url('supplier/add') }}">Tambah supplier baru</a>
+    <div class="col-md-12 text-right">
+        <a class="btn btn-success" href="{{ url('supplier/add') }}">Tambah supplier baru</a>
+    </div>
 
     <table class="table table-striped">
         <thead>

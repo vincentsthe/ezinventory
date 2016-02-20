@@ -61,4 +61,16 @@ class PemakaianController extends Controller
 
         return redirect()->action('PemakaianController@index');
     }
+
+    public function view(Request $request, $id)
+    {
+        $booking = Pemakaian::where('booking', '=', 0)
+            ->where('id', '=', $id)
+            ->with(['items', 'items.atk', 'user'])
+            ->first();
+
+        return view('pemakaian.view', [
+            'booking' => $booking
+        ]);
+    }
 }
