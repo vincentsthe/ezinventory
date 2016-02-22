@@ -44,40 +44,55 @@
     
     <script type="text/javascript" src="{{ URL::asset('assets/js/statistik.js') }}"></script>
     <script type="text/javascript">
-    function submitAtk()
-    {
-       var form = document.forms['statsForm'];
-       form.action = '/statistik/atk';
-       var el = document.createElement("input");
-       el.type = "hidden";
-       el.name = "myHiddenField";
-       el.value = "myValue";
-       form.appendChild(el);
-       form.submit();
-    }
+        function checkDateFilled() {
+            if ($("#startdate").val() && $("#enddate").val()) {
+                return true;
+            } else {
+                alert("isi tanggal mulai dan tanggal selesai");
+                return false;
+            }
+        }
 
-    function submitUser()
-    {
-       var form = document.forms['statsForm'];
-       form.action = '/statistik/user';
-       var el = document.createElement("input");
-       el.type = "hidden";
-       el.name = "myHiddenField";
-       el.value = "myValue";
-       form.appendChild(el);
-       form.submit();
-    }
+        function submitAtk()
+        {
+            if(checkDateFilled()) {
+                var form = document.forms['statsForm'];
+                form.action = '/statistik/atk';
+                var el = document.createElement("input");
+                el.type = "hidden";
+                el.name = "myHiddenField";
+                el.value = "myValue";
+                form.appendChild(el);
+                form.submit();
+            }
+        }
 
-    function submitMinAtk()
-    {
-       var form = document.forms['statsForm'];
-       form.action = '/statistik/min-atk';
-       var el = document.createElement("input");
-       el.type = "hidden";
-       el.name = "myHiddenField";
-       el.value = "myValue";
-       form.appendChild(el);
-       form.submit();
-    }
+        function submitUser()
+        {
+            if(checkDateFilled()) {
+                var form = document.forms['statsForm'];
+                form.action = '/statistik/user';
+                var el = document.createElement("input");
+                el.type = "hidden";
+                el.name = "myHiddenField";
+                el.value = "myValue";
+                form.appendChild(el);
+                form.submit();
+            }
+        }
+
+        function submitMinAtk()
+        {
+            if(checkDateFilled()) {
+                var form = document.forms['statsForm'];
+                form.action = '/statistik/min-atk';
+                var el = document.createElement("input");
+                el.type = "hidden";
+                el.name = "myHiddenField";
+                el.value = "myValue";
+                form.appendChild(el);
+                form.submit();
+            }
+        }
     </script>
 @endsection
