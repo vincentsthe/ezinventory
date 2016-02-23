@@ -34,7 +34,11 @@
                 </tr>
             </thead>
             <tbody>
-
+                <tr class='item-row'>
+                    <td><select id="option1" class='form-control' name='atk_id[]'> </select></td>
+                    <td><input type='number' name='jumlah_item[]' class='form-control' required min="1"></td>
+                    <td><a class='remove-button'><span class='glyphicon glyphicon-remove'></span></a></td>
+                </tr>
             </tbody>
         </table>
         <button id="add-item-button" type="button" class="btn btn-success">Tambah Item</button>
